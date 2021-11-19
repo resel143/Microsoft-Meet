@@ -55,7 +55,7 @@
           <div class="signup-content">
             <div class="signup-form">
               <h2 class="form-title">Sign up</h2>
-              <form method="POST" class="register-form" id="register-form">
+              <form method="POST" action="/register" class="register-form" id="register-form">
                 <div class="form-group">
                   <label for="name"
                     ><i class="zmdi zmdi-account material-icons-name"></i
@@ -71,9 +71,9 @@
                   <label for="your_id"><i class="zmdi zmdi-key"></i> </label>
                   <input
                     type="text"
-                    name="your_id"
+                    name="id"
                     id="your_id"
-                    placeholder="college id"
+                    placeholder="college id "
                   />
                 </div>
                 <div class="form-group">
@@ -89,7 +89,7 @@
                   <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                   <input
                     type="password"
-                    name="pass"
+                    name="password"
                     id="pass"
                     placeholder="Password"
                   />
@@ -107,36 +107,27 @@
                 </div>
                 <div class="form-group">
                   <label for="your_branch"></label>
-                  <select id="your_branch" class="form-control">
+                  <select name="branch" id="your_branch" class="form-control">
                     <option selected>Branch</option>
                     <option>Information Technology</option>
                     <option>Computer Science</option>
                   </select>
                 </div>
-                <select id="inputState" class="form-control">
+                <select name="job" id="inputState" class="form-control">
                   <option selected>I am a...</option>
-                  <option>Student</option>
+                  <option >Student</option>
                   <option>Teacher</option>
                 </select>
                 <br />
                 
-
-                <div class="form-group form-button">
-                  <input
-                    type="button"
-                    name="signup"
-                    id="signup"
-                    class="form-submit"
-                    onclick="signupp(document.getElementById('email').value ,
-                     document.getElementById('pass').value ,
-                      document.getElementById('name').value,
-                      document.getElementById('your_id').value,
-                      document.getElementById('your_branch').options[document.getElementById('your_branch').selectedIndex].text,
-                      document.getElementById('inputState').options[document.getElementById('inputState').selectedIndex].text
-                      ); "
-                    value="Register"
-                  />
-                </div>
+                <input
+                type="submit"
+                name="signup"
+                id="signup"
+                class="form-submit"
+                value="Log in"
+              />
+                
               </form>
             </div>
             <div class="signup-image">
