@@ -62,7 +62,8 @@ app.post("/register",async(req,res)=>{
       password: req.body.password,
       email: req.body.email,
       branch: req.body.branch,
-      job: req.body.job
+      job: req.body.job,
+      login: "0",
     });
 
     const addedUser = await addUser.save();
@@ -80,6 +81,7 @@ app.post("/login",async(req,res)=>{
       item.map(i =>{
         if(i.userId === req.body.name && i.password === req.body.password){
           console.log(`User Found!`);
+          newPerson.updateOne({_id:i._id},{$set:{login:"1"}}).then(()=>{console.log("Signed In")});
           if(i.job === "Student"){
             res.render("stud");
           }else{

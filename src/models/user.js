@@ -20,6 +20,9 @@ const newSchema = new mongoose.Schema({
     },
     job:{
         type:String
+    },
+    login: {
+        type: String
     }
 });
 
